@@ -1,0 +1,20 @@
+USE CentralAutobus
+
+
+INSERT INTO Chofer(iId_Chofer, vNombre_Chofer, vApellidoP_Chofer, vApellidoM_Chofer, vDomicilio_Chofer, vCiudad_Chofer, vEstado_Chofer)
+VALUES 
+(
+10, 'A', 'Moore', 'Orozco', 'La López', 'Santa Catarina', 'Nuevo Leon'
+)
+------------------> 75 insert
+
+---------------------------------------------------------------------------
+
+DELETE FROM Chofer where iId_Chofer =10; ----------> 5 delete
+
+SELECT * FROM Chofer
+
+
+
+UPDATE Caja set iId_Caja = 23 -------------------> 5 UPDATE
+WHERE iId_Caja = 2 
