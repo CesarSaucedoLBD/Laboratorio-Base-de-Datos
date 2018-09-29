@@ -1,0 +1,84 @@
+SELECT Nombre, edad
+from empleado
+
+
+
+SELECT (Nombre + '' + Apellido + '' + Apellido2) as NombreCompleto
+from empleado
+
+
+
+SELECT (e.Nombre + '' + e.Apellido + '' + e.Apellido2) as NombreCompleto
+from empleado as e
+
+
+
+SELECT (e.Nombre + '' + e.Apellido + '' + e.Apellido2) as NombreCompleto, v.*)
+from empleado as e, Ventas as v
+
+
+
+SELECT (e.Nombre + '' + e.Apellido + '' + e.Apellido2) as NombreCompleto, v.*)
+from empleado as e, ventas as v
+join Ventas v on v.IdEmpleadoVenta = e.Id
+
+
+
+SELECT (e.Nombre + '' + e.Apellido + '' + e.Apellido2) as NombreCompleto, v.*)
+from empleado as e, ventas as v
+right join Ventas v on v.IdEmpleadoVneta = e.Id
+
+
+
+SELECT (e.Nombre + '' + e.Apellido + '' + e.Apellido2) as NombreCompleto, v.*)
+from empleado as e, ventas as v
+inner join Ventas v on v.IdEmpleadoVneta = e.Id
+
+
+)
+SELECT (e.Nombre + '' + e.Apellido + '' + e.Apellido2) as NombreCompleto, v.*)
+from empleado as e, ventas as v
+inner join Ventas v on v.IdEmpleadoVneta = e.Id
+where v.Total>5
+
+
+
+SELECT (e.Nombre + '' + e.Apellido + '' + e.Apellido2) as NombreCompleto, COUNT (v.Id) as 'Ventas Totales')
+from empleado as e, ventas as v
+inner join Ventas v on v.IdEmpleadoVneta = e.Id
+group by (e.nombre + '' + e.Apellido + '' + e.Apellido2)
+Having count (v.Id) > 3
+order by COUNT (v.Id) desc
+
+
+
+SELECT (e.Nombre + '' + e.Apellido + '' + e.Apellido2) as NombreCompleto, COUNT (v.Id) as 'Ventas Totales')
+into #tempEmpleados
+from empleado as e, ventas as v
+inner join Ventas v on v.IdEmpleadoVneta = e.Id
+group by (e.nombre + '' + e.Apellido + '' + e.Apellido2)
+Having count (v.Id) > 3
+order by COUNT (v.Id) desc
+
+
+
+select * 
+form #tempEmpleados
+
+Drop table empleados
+
+insert into select * 
+form #teamEmpleados
+
+
+				|-----------------------------------------------TAREA--------------------------------------------------------------------|
+				|CANTIDAD		HACER												 |
+				|															 |
+				|1 			Select into con drop table y reinsertar las filas						 |
+				|5 			Select Basicos con (nombre, alias y usar funciones)						 |
+				|4			Select Join (Cross, inner, left, right)								 |								|5			Selecto con uso de where en diferentes tablas y campos --------------> 1 con order by		 |
+				|5			Select con uso de funciones de agregación (min, max,cont)					 |
+				|				2 sin group by										 |
+				|				3 con group by ---> 1 con having							 |
+				|3			select con join y group by 									 |
+				|------------------------------------------------------------------------------------------------------------------------|
